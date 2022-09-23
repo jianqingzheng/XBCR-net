@@ -1,5 +1,7 @@
-# XBCR-net (Cross B-Cell Receptor network)
-for antibody-antigen binding prediction
+# XBCR-net (Cross B-Cell Receptor network) for antibody-antigen binding prediction
+
+
+
 
 This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/jianqingzheng/ACNN).
 
