@@ -22,9 +22,9 @@ Any publication that discloses findings arising from using this source code or t
 $DOWNLOAD_DIR/XBCR-net/           
     data/[data_name]/
         pos/
-            # experimental dataset for training (.xlsx/.csv files)
+            # experimental dataset for training (.xlsx|.csv files)
         neg/
-            # negative samples for training (.xlsx/.csv files)
+            # negative samples for training (.xlsx|.csv files)
         test/
             to_pred/
                 proc_data.xlsx/csv # the file for inference
@@ -32,7 +32,7 @@ $DOWNLOAD_DIR/XBCR-net/
                 results_rbd_[model_name]-[model_num].xlsx # the file to print the inference results
     models/[data_name]/
         [data_name]-[model_name]/
-            # the files of model parameters (.tf.index/.tf.data-000000-of-00001 files)
+            # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
 ```
 
 * Training
