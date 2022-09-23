@@ -1,7 +1,7 @@
 # XBCR-net
 （Antibody-Antigen binding prediction）
 
-This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/jianqingzheng/ACNN)
+This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/jianqingzheng/ACNN).
 
 Any publication that discloses findings arising from using this source code or the model parameters should [cite](#citing-this-work) the
 [XBCR-net paper]() and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/document/9197328).
