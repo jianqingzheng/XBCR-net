@@ -8,6 +8,8 @@ This repo provides an implementation of the training and inference pipeline of X
 Any publication that discloses findings arising from using this source code or the model parameters should [cite](#citing-this-work) the
 [XBCR-net paper](https://doi.org/10.1038/s41422-022-00727-6) and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/document/9197328).
 
+![header](imgs/fig1.jpg)
+
 ## Requirement
 * Python 3.8
 * Tensorflow == 2.4.1
