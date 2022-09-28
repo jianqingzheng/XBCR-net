@@ -5,7 +5,7 @@
 
 This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
 
-Any publication that discloses findings arising from using this source code or the model parameters should [cite](#citing-this-work) the
+Any publication that discloses findings arising from using this source code or the model parameters should cite the
 [XBCR-net paper](https://doi.org/10.1038/s41422-022-00727-6) and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/document/9197328).
 
 ![header](imgs/fig1.jpg)
