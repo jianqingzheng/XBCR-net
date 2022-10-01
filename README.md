@@ -37,7 +37,7 @@ $DOWNLOAD_DIR/XBCR-net/
         [data_name]-[model_name]/
             # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
 ```
-[Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx)
+Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx)
 
 * Training
 ```
