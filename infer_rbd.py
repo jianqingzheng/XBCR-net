@@ -50,7 +50,8 @@ def infer(net_core=None, model_path=None,model_num=None,result_path=None,suffix_
     shape_light = [300, 20]
     shape_antig = [300, 20]
 
-    antig_pths = [os.path.join(antig_path, 'train_seq_' + str(0) + '.xlsx')]
+    # antig_pths = [os.path.join(antig_path, 'train_seq_' + str(0) + '.xlsx')]
+    antig_pths = glob.glob(os.path.join(antig_path, suffix))
     print(antig_path)
 
     antig_data=[reader(pth,engine='openpyxl') for pth in antig_pths]

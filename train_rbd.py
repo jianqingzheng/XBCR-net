@@ -89,7 +89,8 @@ def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path
     suffix='*.xlsx' #'*.csv'
     reader=pd.read_excel
 
-    pos_pths = [os.path.join(pos_path, 'train_seq_'+str(model_num)+'.xlsx')]
+    # pos_pths = [os.path.join(pos_path, 'train_seq_'+str(model_num)+'.xlsx')]
+    pos_pths = glob.glob(os.path.join(pos_path, suffix))
     pos_data=[reader(pth,engine='openpyxl') for pth in pos_pths]
     neg_pths=glob.glob(os.path.join(neg_path, suffix))
     neg_data=[reader(pth,engine='openpyxl') for pth in neg_pths]
