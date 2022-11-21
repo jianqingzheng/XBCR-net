@@ -81,8 +81,9 @@ data_path=os.path.join('.','data',data_name)
 print('model:',model_path,'  data:',data_path)
 print(os.path.abspath(data_path))
 
-antig_path = os.path.join(data_path,'pos')
-antib_path = os.path.join(data_path,'test','to_pred')
+# antig_path = os.path.join(data_path,'pos')
+antig_path = os.path.join(data_path,'test','ag_to_pred')
+antib_path = os.path.join(data_path,'test','ab_to_pred')
 
 result_path = os.path.join('.', 'data', data_name, 'test','results', 'results_'+str(args.type)+'_'+str(model_name)+'-'+str(model_num) + suffix_save)
 

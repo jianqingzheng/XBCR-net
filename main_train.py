@@ -83,5 +83,4 @@ print(os.path.abspath(data_path))
 pos_path = os.path.join(data_path,'pos')
 neg_path = os.path.join(data_path,'neg')
 
-# train(net_core=net_core,model_path=model_path,crop_sz=crop_sz,pair_type=pair_type,rescale_factor=rescale_factor,nb_enc_features=nb_enc_features,nb_dec_features=nb_dec_features,use_raa=use_raa,use_seg=use_seg,use_aff=use_aff,train_path=train_paths,valid_path=valid_paths,batch_size=batch_size, nb_epochs1=nb_epochs1, nb_epochs2=nb_epochs2, nb_epochs3=nb_epochs3)
 train(net_core=net_core, model_path=model_path,model_num=model_num,include_light=include_light, pos_path=pos_path, neg_path=neg_path, batch_size=batch_size, nb_epochs1=nb_epochs1)

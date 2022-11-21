@@ -61,9 +61,9 @@ def infer(net_core=None, model_path=None,model_num=None,result_path=None,suffix_
     antig_data = [df.drop_duplicates(subset=['variant_name','variant_seq','rbd'], keep='first').reset_index(drop=False) for df in antig_data]
     [seq_antig], antig_series = data_process(antig_data, ['variant_seq'], seq_length=[shape_antig[0]])
     if include_light:
-        [seq_heavy, seq_light], antib_series = data_process(antib_data, ['V.D.J.REGION', 'V.J.REGION'], seq_length=[shape_heavy[0], shape_light[0]])
+        [seq_heavy, seq_light], antib_series = data_process(antib_data, ['Heavy', 'Light'], seq_length=[shape_heavy[0], shape_light[0]])
     else:
-        [seq_heavy], antib_series = data_process(antib_data, ['V.D.J.REGION'], seq_length=[shape_heavy[0], shape_light[0]])
+        [seq_heavy], antib_series = data_process(antib_data, ['Heavy'], seq_length=[shape_heavy[0], shape_light[0]])
         seq_light=[[np.zeros_like(X[0]),0,200] for X in seq_heavy]
 
     num_heavy_light = len(seq_heavy)
