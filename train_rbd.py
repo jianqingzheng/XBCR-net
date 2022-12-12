@@ -98,8 +98,8 @@ def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path
     [seq_heavy_pos, seq_light_pos, seq_antig_pos], rbd_bind = data_process(pos_data, ['Heavy', 'Light', 'variant_seq'], seq_length=[shape_heavy[0], shape_light[0], shape_antig[0]], input_loc=True)
     [seq_heavy_neg, seq_light_neg], _ = data_process(neg_data, ['Heavy', 'Light'], seq_length=[shape_heavy[0], shape_light[0]], input_loc=False)
     if not include_light:
-        seq_light_pos=[[np.zeros_like(X[0]),0,200] for X in seq_light_pos]
-        seq_light_neg=[[np.zeros_like(X[0]),0,200] for X in seq_light_neg]
+        seq_light_pos=[[np.zeros_like(X[0]),1,200] for X in seq_light_pos]
+        seq_light_neg=[[np.zeros_like(X[0]),1,200] for X in seq_light_neg]
     rbd_neg = np.zeros([batch_size, 1], dtype=float)
     # ===============================================================================
     input_heavy_seq = tf.placeholder(tf.float32, [None, *shape_heavy])
