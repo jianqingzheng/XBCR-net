@@ -21,33 +21,55 @@ This repo provides an implementation of the training and inference pipeline of X
 
 * Setup
 ```
-$DOWNLOAD_DIR/XBCR-net/           
-    data/[data_name]/
+[$DOWNLOAD_DIR]/XBCR-net/           
+    data/[$data_name]/
         pos/
             # experimental dataset for training (.xlsx|.csv files)
-            [Data_S1]
+            example-experimental_data.xlsx
         neg/
             # negative samples for training (.xlsx|.csv files)
+            example-negative_data.xlsx
         test/
-            to_pred/
-                proc_data.xlsx/csv # the file for inference
+            ab_to_pred/
+                # the antibody data for inference
+                example-antibody_to_predict.xlsx 
+            ag_to_pred/
+                # the antigen data for inference
+                example-antigen_to_predict.xlsx 
             results/
-                results_rbd_[model_name]-[model_num].xlsx # the file to print the inference results
-    models/[data_name]/
-        [data_name]-[model_name]/
+                # the files to print the inference results
+                results_rbd_[$model_name]-[$model_num].xlsx 
+    models/[$data_name]/
+        [$data_name]-[$model_name]/
             # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
+            model_rbd_[$model_num].tf.index
+            model_rbd_[$model_num].tf.data-000000-of-00001
 ```
-Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx)
+Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (optional)
 
 * Training
 ```
-python main_train.py --model_name XBCR_net --data_name [data_name] --model_num [model_num] --max_epochs [max_epochs] --include_light [1/0]
+cd $DOWNLOAD_DIR/XBCR-net
+python ./main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]
 ```
+example for training (default):
+```
+cd $DOWNLOAD_DIR/XBCR-net
+python ./main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
+```
+
 
 * Inference
 ```
-python main_infer.py --model_name XBCR_net --data_name [data_name] --model_num [model_num] --include_light [1/0]
+cd $DOWNLOAD_DIR/XBCR-net
+python ./main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]
 ```
+example for inference (default):
+```
+cd $DOWNLOAD_DIR/XBCR-net
+python ./main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
+```
+
 
 # Citing this work
 
