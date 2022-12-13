@@ -45,13 +45,7 @@ parser.add_argument(
     help="The model number.",
     type=int,
     default=0,
-)
-
-parser.add_argument(
-    "--max_epochs",
-    help="The maximum number of epochs, -1 means following configuration.",
-    type=int,
-    default=40,
+    # default=1,
 )
 
 parser.add_argument(

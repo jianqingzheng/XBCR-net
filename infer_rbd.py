@@ -13,7 +13,7 @@ eps = 1e-5
 ##############################################################################################
 def infer(net_core=None, model_path=None,model_num=None,result_path=None,suffix_save=None,include_light=None, antig_path=None, antib_path=None,batch_size=1):
 
-    def data_process(data, header=[''], seq_length=[300], min_seq_length=10, str_rep=''):
+    def data_process(data, header=[''], seq_length=[300], min_seq_length=10,str_rep=''):
         seq_vecs = [[] for _ in range(len(header))]
         seq_max_length = 0
         out_data = pd.Series({})
@@ -25,10 +25,13 @@ def infer(net_core=None, model_path=None,model_num=None,result_path=None,suffix_
             for i in range(seq_num):
                 seqs = [str(d[h].loc[i]) for h in header]
                 rbd_binding = all([dn not in d or d[dn].loc[i] > 0 for dn in drop_name])
-                if all([len(s) > min_seq_length for s in seqs]) and rbd_binding:
+                flag=str(d[header[0]].loc[i]).replace('_', str_rep).replace('\n', str_rep).replace('\t', str_rep).replace(' ', str_rep).isalpha()
+
+                if all([len(s) > min_seq_length for s in seqs]) and rbd_binding and all([len(s) <= seq_length[0] for s in seqs]) and flag:
                     if True:
                         for j, seq in enumerate(seqs):
                             seq = seq.replace(' ', str_rep)
+                            # seq = seq.replace('_', str_rep)
                             seq = seq.replace('\n', str_rep)
                             seq = seq.replace('\t', str_rep)
                             seq_v = np.zeros([seq_length[j], 20])
@@ -42,29 +45,31 @@ def infer(net_core=None, model_path=None,model_num=None,result_path=None,suffix_
         print(seq_max_length)
         return seq_vecs, out_data
 
+
     restore_pre_train = True
-    suffix='*.xlsx' #'*.csv'
-    reader=pd.read_excel
+
+    # suffix='*.xlsx' #'*.csv'
 
     shape_heavy = [300, 20]
     shape_light = [300, 20]
     shape_antig = [300, 20]
 
-    # antig_pths = [os.path.join(antig_path, 'train_seq_' + str(0) + '.xlsx')]
-    antig_pths = glob.glob(os.path.join(antig_path, suffix))
     print(antig_path)
 
-    antig_data=[reader(pth,engine='openpyxl') for pth in antig_pths]
-    antib_pths=glob.glob(os.path.join(antib_path, suffix))
-    antib_data=[reader(pth,engine='openpyxl') for pth in antib_pths]
+    antig_data = read_files(antig_path, '*.xlsx')
+    # antig_data = read_files(antig_path, '*.csv')
+
+    antib_data = read_files(antib_path, '*.xlsx')
+    # antib_data = read_files(antib_path, '*.csv')
 
     antig_data = [df.drop_duplicates(subset=['variant_name','variant_seq','rbd'], keep='first').reset_index(drop=False) for df in antig_data]
+
     [seq_antig], antig_series = data_process(antig_data, ['variant_seq'], seq_length=[shape_antig[0]])
     if include_light:
         [seq_heavy, seq_light], antib_series = data_process(antib_data, ['Heavy', 'Light'], seq_length=[shape_heavy[0], shape_light[0]])
     else:
         [seq_heavy], antib_series = data_process(antib_data, ['Heavy'], seq_length=[shape_heavy[0], shape_light[0]])
-        seq_light=[[np.zeros_like(X[0]),0,200] for X in seq_heavy]
+        seq_light=[[np.zeros_like(X[0]),1,200] for X in seq_heavy]
 
     num_heavy_light = len(seq_heavy)
     num_antig = len(seq_antig)

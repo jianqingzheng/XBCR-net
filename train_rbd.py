@@ -87,13 +87,9 @@ def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path
     shape_antig = [300, 20]
 
     suffix='*.xlsx' #'*.csv'
-    reader=pd.read_excel
 
-    # pos_pths = [os.path.join(pos_path, 'train_seq_'+str(model_num)+'.xlsx')]
-    pos_pths = glob.glob(os.path.join(pos_path, suffix))
-    pos_data=[reader(pth,engine='openpyxl') for pth in pos_pths]
-    neg_pths=glob.glob(os.path.join(neg_path, suffix))
-    neg_data=[reader(pth,engine='openpyxl') for pth in neg_pths]
+    pos_data = read_files(pos_path,suffix)
+    neg_data = read_files(neg_path,suffix)
 
     [seq_heavy_pos, seq_light_pos, seq_antig_pos], rbd_bind = data_process(pos_data, ['Heavy', 'Light', 'variant_seq'], seq_length=[shape_heavy[0], shape_light[0], shape_antig[0]], input_loc=True)
     [seq_heavy_neg, seq_light_neg], _ = data_process(neg_data, ['Heavy', 'Light'], seq_length=[shape_heavy[0], shape_light[0]], input_loc=False)

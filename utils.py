@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+import glob
+import os
 
 # alphabet_dict="ACDEFGHIKLMNPQRSTVWY"
 ALPHABET="ACDEFGHIKLMNPQRSTVWY"
@@ -28,3 +31,12 @@ def get_seq_data(data, idx=[[0],[0]],rand_shift=False,repeat=1):
     else:
         return np.concatenate([np.stack([vec_shift(data[i], rand_shift) for i in idx], 0)] * repeat, 0)
 
+def read_files(folder_dir,suffix='*.xlsx'):
+    if 'xlsx' in suffix:
+        reader = pd.read_excel
+        pths = glob.glob(os.path.join(folder_dir, suffix))
+        return [reader(pth, engine='openpyxl') for pth in pths]
+    else:
+        reader = pd.read_csv
+        pths = glob.glob(os.path.join(folder_dir, suffix))
+        return [reader(pth, encoding='latin-1') for pth in pths]
