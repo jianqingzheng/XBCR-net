@@ -44,6 +44,7 @@ def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path
                             seq = seq.replace(' ', str_rep)
                             seq = seq.replace('\n', str_rep)
                             seq = seq.replace('\t', str_rep)
+                            seq = seq.replace('_', str_rep)
                             seq_v = np.zeros([seq_length[j], 20])
                             seq_v[0:len(seq), :] = one_hot_encoder(s=seq)
                             seq_vecs[j].append([seq_v, seq_length[j] - len(seq), len(seq)])
