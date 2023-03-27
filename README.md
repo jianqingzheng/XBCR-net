@@ -1,6 +1,6 @@
 # XBCR-net (Cross B-Cell Receptor network) for antibody-antigen binding prediction
 
-[![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41422--022--00727--6-blue)](https://www.nature.com/articles/s41422-022-00727-6)
+[![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41422--022--00727--6-gray)](https://www.nature.com/articles/s41422-022-00727-6)
 
 Code for [Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant](https://doi.org/10.1038/s41422-022-00727-6)
 
