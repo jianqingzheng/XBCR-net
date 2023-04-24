@@ -109,7 +109,8 @@ Any publication that discloses findings arising from using this source code or t
   journal={Cell Research},
   pages={1--3},
   year={2022},
-  publisher={Nature Publishing Group}
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41422-022-00727-6},
 }
 ```
 and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/document/9197328):
@@ -120,7 +121,8 @@ and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/docume
   booktitle={2020 IEEE International Conference on Robotics and Automation (ICRA)},
   pages={8455--8461},
   year={2020},
-  organization={IEEE}
+  organization={IEEE},
+  doi={10.1109/ICRA40945.2020.9197328},
 }
 ```
 
