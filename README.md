@@ -51,27 +51,27 @@ This repo provides an implementation of the training and inference pipeline of X
 ```
 [$DOWNLOAD_DIR]/XBCR-net/           
 ├── data/[$data_name]/
-    ├── pos/
-            # experimental dataset for training (.xlsx|.csv files)
-        ├── example-experimental_data.xlsx
-    ├── neg/
-            # negative samples for training (.xlsx|.csv files)
-        ├── example-negative_data.xlsx
-    ├── test/
-        ├── ab_to_pred/
-                # the antibody data for inference
-            ├── example-antibody_to_predict.xlsx 
-        ├── ag_to_pred/
-                # the antigen data for inference
-            ├── example-antigen_to_predict.xlsx 
-        ├── results/
-                # the files to print the inference results
-            ├── results_rbd_[$model_name]-[$model_num].xlsx 
+|   ├── pos/
+|   |	|   # experimental dataset for training (.xlsx|.csv files)
+|   |   ├── example-experimental_data.xlsx
+|   ├── neg/
+|   |	|   # negative samples for training (.xlsx|.csv files)
+|   |   ├── example-negative_data.xlsx
+|   ├── test/
+|   |   ├── ab_to_pred/
+|   |   |   |   # the antibody data for inference
+|   |   |   ├── example-antibody_to_predict.xlsx 
+|   |   ├── ag_to_pred/
+|   |   |   |     # the antigen data for inference
+|   |   |   ├── example-antigen_to_predict.xlsx 
+|   |   ├── results/
+|   |   |   |    # the files to print the inference results
+|   |   |   ├── results_rbd_[$model_name]-[$model_num].xlsx 
 ├── models/[$data_name]/
-    ├── [$data_name]-[$model_name]/
-            # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
-        ├── model_rbd_[$model_num].tf.index
-        ├── model_rbd_[$model_num].tf.data-000000-of-00001
+|   ├── [$data_name]-[$model_name]/
+|   |   |   # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
+|   |   ├── model_rbd_[$model_num].tf.index
+|   |   ├── model_rbd_[$model_num].tf.data-000000-of-00001
 ```
 Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (optional)
 
