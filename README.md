@@ -48,7 +48,7 @@ This repo provides an implementation of the training and inference pipeline of X
 ## Usage
 
 * Setup
-```console
+```
 [$DOWNLOAD_DIR]/XBCR-net/           
 ├── data/[$data_name]/
 |   ├── pos/
@@ -76,24 +76,24 @@ This repo provides an implementation of the training and inference pipeline of X
 Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (optional)
 
 ### Training
-```console
+```shell
 cd $DOWNLOAD_DIR/XBCR-net
 python ./main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]
 ```
 * example for training (default):
-```console
+```shell
 cd $DOWNLOAD_DIR/XBCR-net
 python ./main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
 ```
 
 
 ### Inference
-```
+```shell
 cd $DOWNLOAD_DIR/XBCR-net
 python ./main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]
 ```
 * example for inference (default):
-```
+```shell
 cd $DOWNLOAD_DIR/XBCR-net
 python ./main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
 ```
