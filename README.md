@@ -99,7 +99,7 @@ python ./main_infer.py --model_name XBCR_net --data_name binding --model_num 0 -
 ```
 
 
-# Citing this work
+## Citing this work
 
 Any publication that discloses findings arising from using this source code or the network model should cite
 ```bibtex
