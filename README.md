@@ -8,6 +8,7 @@ Code for [Deep learning-based rapid generation of broadly reactive antibodies ag
 This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
 
 ---
+
 - #0-brief-intro
 - #1-installation
 - #2-usage
@@ -15,7 +16,9 @@ This repo provides an implementation of the training and inference pipeline of X
   - #22a-inference-by-entering-data
   - #22b-batch-inference
 - #3-citing-this-work
+
 ---
+
 ## 0. Brief Intro ##
 
 ![header](imgs/fig1.jpg)
@@ -44,6 +47,7 @@ This repo provides an implementation of the training and inference pipeline of X
 	<li>h. The HCDR3 sequence frequency of the dominant cluster (encoded by IGHV3-30 and IGKV1-13) of the pan-SARS group is shown.
 	</li>
 </ul>
+
 ---
 
 ## 1. Installation ##
@@ -70,6 +74,7 @@ pip install pandas==1.1.0
 ```
 
 (Other settings could be also applicable)
+
 ---
 
 ## 2. Usage ##
