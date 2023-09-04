@@ -104,11 +104,13 @@ def seq_proc(str_in,seq_shape=[300,20],shift_loc=10,str_rep=''):
     str_in = str_in.replace(' ', str_rep)
     str_in = str_in.replace('_', str_rep)
     str_in = str_in.replace('.', str_rep)
+    str_in = str_in.replace('\n', str_rep)
+    str_in = str_in.replace('\t', str_rep)
     str_lst = str_in.split(';')
     seq_v = np.zeros([len(str_lst)]+seq_shape)
     for i,ss in enumerate(str_lst):
         seq_v[i,shift_loc:shift_loc+len(ss), :] = one_hot_encoder(s=ss)
-    return seq_v
+    return seq_v,str_lst
 
 # ===============================================================================
 input_heavy_seq = tf.placeholder(tf.float32, [None, *shape_heavy])
@@ -122,12 +124,19 @@ sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver(max_to_keep=1)
 saver.restore(sess, model_path + "_rbd_" + str(model_num) + ".tf")
 
-
+seq_heavy,lst_heavy=seq_proc(args.heavy,shape_heavy)
+seq_light,lst_light=seq_proc(args.light,shape_light)
+seq_antig,lst_antig=seq_proc(args.antig,shape_antig)
 inferFeed = {
-    input_heavy_seq: seq_proc(args.heavy,shape_heavy),
-    input_light_seq: seq_proc(args.light,shape_light),
-    input_antig_seq: seq_proc(args.antig,shape_antig),
+    input_heavy_seq: seq_heavy,
+    input_light_seq: seq_light,
+    input_antig_seq: seq_antig,
 }
 prob_bind = sess.run([pred_bind],feed_dict=inferFeed)
-print(prob_bind)
+for ii in range(len(lst_heavy)):
+    print(ii)
+    print(lst_heavy[ii])
+    print(lst_light[ii])
+    print(lst_antig[ii])
+    print(prob_bind[0][ii])
 
