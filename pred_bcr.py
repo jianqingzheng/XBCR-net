@@ -107,7 +107,7 @@ def seq_proc(str_in,seq_shape=[300,20],shift_loc=10,str_rep=''):
     str_lst = str_in.split(';')
     seq_v = np.zeros([len(str_lst)]+seq_shape)
     for i,ss in enumerate(str_lst):
-        seq_v[i,shift_loc:len(ss), :] = one_hot_encoder(s=ss)
+        seq_v[i,shift_loc:shift_loc+len(ss), :] = one_hot_encoder(s=ss)
     return seq_v
 
 # ===============================================================================
