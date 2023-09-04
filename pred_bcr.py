@@ -134,9 +134,9 @@ inferFeed = {
 }
 prob_bind = sess.run([pred_bind],feed_dict=inferFeed)
 for ii in range(len(lst_heavy)):
-    print(ii)
-    print(lst_heavy[ii])
-    print(lst_light[ii])
-    print(lst_antig[ii])
-    print(prob_bind[0][ii])
+    print('id: ',ii)
+    print('heavy: ',lst_heavy[ii])
+    print('light: ',lst_light[ii])
+    print('antig: ',lst_antig[ii])
+    print('score: ',prob_bind[0][ii][0])
 
