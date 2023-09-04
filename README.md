@@ -36,12 +36,28 @@ This repo provides an implementation of the training and inference pipeline of X
 	</li>
 </ul>
 
-## Requirement
+## Installation
+
+Clone code from Github repo: https://github.com/jianqingzheng/XBCR-net.git
+
+```shell
+git clone https://github.com/jianqingzheng/XBCR-net.git
+cd XBCR-net/
+```
+
+install packages
+
 [![OS](https://img.shields.io/badge/OS-Windows%7CLinux-darkblue)]()
 [![PyPI pyversions](https://img.shields.io/badge/Python-3.8-blue)](https://pypi.python.org/pypi/ansicolortags/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4.1-lightblue)](www.tensorflow.org)
 [![Numpy](https://img.shields.io/badge/Numpy-1.19.5-lightblue)](https://numpy.org)
 [![Pandas](https://img.shields.io/badge/Pandas-1.1.0-lightblue)](https://pandas.pydata.org/)
+
+```shell
+pip install tensorflow==2.4.1
+pip install numpy==1.19.5
+pip install pandas==1.1.0
+```
 
 (Other settings could be also applicable)
 
@@ -51,52 +67,64 @@ This repo provides an implementation of the training and inference pipeline of X
 ```
 [$DOWNLOAD_DIR]/XBCR-net/           
 ├── data/[$data_name]/
-|   ├── pos/
+|   ├── exper/
 |   |	|   # experimental dataset for training (.xlsx|.csv files)
-|   |   ├── example-experimental_data.xlsx
-|   ├── neg/
+|   |   └── example-experimental_data.xlsx
+|   ├── nonexp/
 |   |	|   # negative samples for training (.xlsx|.csv files)
-|   |   ├── example-negative_data.xlsx
-|   ├── test/
-|   |   ├── ab_to_pred/
-|   |   |   |   # the antibody data for inference
-|   |   |   ├── example-antibody_to_predict.xlsx 
-|   |   ├── ag_to_pred/
-|   |   |   |     # the antigen data for inference
-|   |   |   ├── example-antigen_to_predict.xlsx 
-|   |   ├── results/
-|   |   |   |    # the files to print the inference results
-|   |   |   ├── results_rbd_[$model_name]-[$model_num].xlsx 
-├── models/[$data_name]/
-|   ├── [$data_name]-[$model_name]/
-|   |   |   # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
-|   |   ├── model_rbd_[$model_num].tf.index
-|   |   ├── model_rbd_[$model_num].tf.data-000000-of-00001
+|   |   └── example-negative_data.xlsx
+|   └── test/
+|       ├── ab_to_pred/
+|       |   |   # the antibody data for inference
+|       |   └── example-antibody_to_predict.xlsx 
+|       ├── ag_to_pred/
+|       |   |     # the antigen data for inference
+|       |   └── example-antigen_to_predict.xlsx 
+|       └── results/
+|           |    # the files to print the inference results
+|           └── results_rbd_[$model_name]-[$model_num].xlsx 
+└── models/[$data_name]/
+    └── [$data_name]-[$model_name]/
+        |   # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
+        ├── model_rbd_[$model_num].tf.index
+        └── model_rbd_[$model_num].tf.data-000000-of-00001
 ```
-Download [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (optional)
+Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
 
-### Training
+### Training (optional)
+1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2. Run
 ```shell
-cd $DOWNLOAD_DIR/XBCR-net
-python ./main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]
+python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]
 ```
+3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
+
+
 * example for training (default):
+1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2. Run
 ```shell
-cd $DOWNLOAD_DIR/XBCR-net
-python ./main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
+python main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
 ```
+3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 
-### Inference
+### Batch Inference
+1. Upload the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
+2. Run
 ```shell
-cd $DOWNLOAD_DIR/XBCR-net
-python ./main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]
+python main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]
 ```
+3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
+
+
 * example for inference (default):
+1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
+2. Run
 ```shell
-cd $DOWNLOAD_DIR/XBCR-net
-python ./main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
+python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
 ```
+3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
 
 
 ## Citing this work
