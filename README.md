@@ -44,6 +44,7 @@ This repo provides an implementation of the training and inference pipeline of X
 	<li>h. The HCDR3 sequence frequency of the dominant cluster (encoded by IGHV3-30 and IGKV1-13) of the pan-SARS group is shown.
 	</li>
 </ul>
+---
 
 ## 1. Installation ##
 
@@ -69,6 +70,7 @@ pip install pandas==1.1.0
 ```
 
 (Other settings could be also applicable)
+---
 
 ## 2. Usage ##
 * Setup
@@ -150,6 +152,7 @@ python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --i
 ```
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
 
+---
 
 ## 3. Citing this work
 
