@@ -7,7 +7,7 @@ Code for [Deep learning-based rapid generation of broadly reactive antibodies ag
 
 This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
 
-## Brief Intro
+## Brief Intro ##
 
 ![header](imgs/fig1.jpg)
 <ul style="width: auto; height: 200px; overflow: auto; padding:0.4em; margin:0em; text-align:justify; font-size:small">
@@ -36,7 +36,7 @@ This repo provides an implementation of the training and inference pipeline of X
 	</li>
 </ul>
 
-## Installation
+## Installation ##
 
 Clone code from Github repo: https://github.com/jianqingzheng/XBCR-net.git
 
@@ -61,7 +61,7 @@ pip install pandas==1.1.0
 
 (Other settings could be also applicable)
 
-## Usage
+## Usage ##
 
 * Setup
 ```
@@ -91,14 +91,14 @@ pip install pandas==1.1.0
 ```
 Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
 
-### Training (optional)
+### Training (optional) ###
 
 1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
 2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
 3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 
-#### example for training (default):
+#### - example for training (default):
 1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
 2. Run
 ```shell
@@ -107,14 +107,14 @@ python main_train.py --model_name XBCR_net --data_name binding --model_num 0 --m
 3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 
-### Batch Inference
+### Batch Inference ###
 
 1. Upload the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
 2. Run ```python main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]```
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
 
 
-#### example for inference (default):
+#### - example for inference (default):
 1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
 2. Run
 ```shell
