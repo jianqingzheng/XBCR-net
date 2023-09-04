@@ -93,18 +93,18 @@ Default data can be also downloaded from [Data_S1](https://static-content.spring
 
 ### 2.1. Training (optional) ###
 
-2.1.1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
-2.1.2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
-2.1.3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
+1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
+3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 
 #### - example for training (default):
-2.1.1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
-2.1.2. Run
+1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2. Run
 ```shell
 python main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
 ```
-2.1.3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
+3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 ### 2.2a. Inference by entering data ###
 - Example for a single data point:
@@ -145,7 +145,8 @@ python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --i
 
 ## 3. Citing this work
 
-Any publication that discloses findings arising from using this source code or the network model should cite
+Any publication that discloses findings arising from using this source code or the network model should cite:
+- Hantao Lou, Jianqing Zheng, Xiaohang Leo Fang, Zhu Liang, Meihan Zhang, Yu Chen, Chunmei Wang, Xuetao Cao, "Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant." *Cell Research* 33.1 (2023): 80-82.
 ```bibtex
 @article{lou2022deep,
   title={Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant},
@@ -158,6 +159,7 @@ Any publication that discloses findings arising from using this source code or t
 }
 ```
 and, if applicable, the [ACNN paper](https://ieeexplore.ieee.org/abstract/document/9197328):
+- Xiao-Yun Zhou, Jian-Qing Zheng, Peichao Li, and Guang-Zhong Yang, "ACNN: a full resolution dcnn for medical image segmentation." *2020 IEEE International Conference on Robotics and Automation (ICRA)*. IEEE, 2020.
 ```bibtex
 @inproceedings{zhou2020acnn,
   title={Acnn: a full resolution dcnn for medical image segmentation},
