@@ -9,13 +9,13 @@ This repo provides an implementation of the training and inference pipeline of X
 
 ---
 
-- #0-brief-intro
-- #1-installation
-- #2-usage
-  - #21-training-optional
-  - #22a-inference-by-entering-data
-  - #22b-batch-inference
-- #3-citing-this-work
+- [0. Brief Introduction](#0-brief-intro)
+- [1. Installation](#1-installation)
+- [2. Usage](#2-usage)
+  - [2.1. Training (optional)](#21-training-optional)
+  - [2.2a. Inference by entering data](#22a-inference-by-entering-data)
+  - [2.2b. Batch Inference](#22b-batch-inference)
+- [3. Citing this work](#3-citing-this-work)
 
 ---
 
