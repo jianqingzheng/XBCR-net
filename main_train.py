@@ -80,7 +80,7 @@ print('model:',model_path,'  data:',data_path)
 print(os.path.abspath(data_path))
 
 # training data
-pos_path = os.path.join(data_path,'pos')
-neg_path = os.path.join(data_path,'neg')
+pos_path = os.path.join(data_path,'exper')
+neg_path = os.path.join(data_path,'nonexp')
 
 train(net_core=net_core, model_path=model_path,model_num=model_num,include_light=include_light, pos_path=pos_path, neg_path=neg_path, batch_size=batch_size, nb_epochs1=nb_epochs1)
