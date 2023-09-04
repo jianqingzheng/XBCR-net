@@ -8,7 +8,7 @@ Code for [Deep learning-based rapid generation of broadly reactive antibodies ag
 This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
 
 ---
-
+Contents
 - [0. Brief Introduction](#0-brief-intro)
 - [1. Installation](#1-installation)
 - [2. Usage](#2-usage)
