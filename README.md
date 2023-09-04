@@ -91,22 +91,22 @@ pip install pandas==1.1.0
 ```
 Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
 
-### 2.a Training (optional) ###
+### 2.a. Training (optional) ###
 
-1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
-2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
-3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
+2.a.1. Upload the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2.a.2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
+2.a.3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 
 #### - example for training (default):
-1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
-2. Run
+2.a.1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
+2.a.2. Run
 ```shell
 python main_train.py --model_name XBCR_net --data_name binding --model_num 0 --max_epochs 100 --include_light 1
 ```
-3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
+2.a.3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
-### 2.b Inference by entering data ###
+### 2.b. Inference by entering data ###
 - Example for a single data point:
 
 ```shell
@@ -127,20 +127,20 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
 ```
 
-### 2.c Batch Inference ###
+### 2.c. Batch Inference ###
 
-1. Upload the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
-2. Run ```python main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]```
-3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
+2.c.1. Upload the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
+2.c.2. Run ```python main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]```
+2.c.3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
 
 
 #### - example for inference (default):
-1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
-2. Run
+2.c.1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
+2.c.2. Run
 ```shell
 python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
 ```
-3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
+2.c.3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
 
 
 ## 3. Citing this work
