@@ -108,7 +108,8 @@ pip install pandas==1.1.0
         ├── model_rbd_[$model_num].tf.index
         └── model_rbd_[$model_num].tf.data-000000-of-00001
 ```
-Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
+> Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
+
 
 ### 2.1. Training (optional) ###
 
@@ -116,8 +117,18 @@ Default data can be also downloaded from [Data_S1](https://static-content.spring
 2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
 3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
+* Arguments include
 
-#### - example for training (default):
+| Argument              | Description                                |
+| --------------------- | ------------------------------------------ |
+| `--data_name` 	| The data folder name                       |
+| `--model_name`        | The used model                      	     |
+| `--model_num`         | The index number of trained model          |
+| `--max_epochs`        | The max epoch number for training 	     |
+| `--include_light`     | 1/0: include/exclude input of a light chain|
+
+
+#### Example for training (default):
 1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
 2. Run
 ```shell
@@ -133,7 +144,7 @@ HEAVY='VQLVESGGGLVQPGGSLRLSCAASGFTFSSYDMHWVRQTTGKGLEWVSTIGTAGDTYYPDSVKGRFTISREDA
 LIGHT='DIEMTQSPSSLSAAVGDRVTITCRASQSIGSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFAIYYCQQSYVSPTYTFGPGTKVDIK'
 ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF'
 
-python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
+python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
 
 - Example for multiple data points (split by ','):
@@ -143,8 +154,20 @@ HEAVY='VQLVESGGGLVQPGGSLRLSCAASGFTFSSYDMHWVRQTTGKGLEWVSTIGTAGDTYYPDSVKGRFTISREDA
 LIGHT='DIEMTQSPSSLSAAVGDRVTITCRASQSIGSYLNWYQQKPGKAPKLLIYAASSLQSGVPSRFSGSGSGTDFTLTISSLQPEDFAIYYCQQSYVSPTYTFGPGTKVDIK, DIQLTQSPSFLSASVGDRVTITCRASQGIYSYLAWYQQKPGKAPKLLIYAASTLQSGVPSRFSGSGSGTEFTLTISSLQPEDFATYYCQQLNSYPITFGQGTRLEIK'
 ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF, RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCFTNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYNYLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPYRVVVLSFELLHAPATVCGPKKSTNLVKNKCVNF'
 
-python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0 --include_light 1
+python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
+
+| Argument              | Description                                	|
+| --------------------- | ----------------------------------------------|
+| `--heavy` 		| The heavy chain           			|
+| `--light` 		| The light chain                       	|
+| `--antig` 		| The antigen                       		|
+| `--data_name` 	| The data folder name                       	|
+| `--data_name` 	| The data folder name                       	|
+| `--model_name`        | The used model                      	     	|
+| `--model_num`         | The index number of the used model         	|
+| `--include_light`     | 1/0: include/exclude input of a light chain	|
+
 
 ### 2.2b. Batch Inference ###
 
@@ -153,7 +176,7 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
 
 
-#### - example for inference (default):
+#### Example for inference (default):
 1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
 2. Run
 ```shell
