@@ -77,7 +77,7 @@ pip install numpy==1.19.5
 pip install pandas==1.1.0
 ```
 
-(Other settings could be also applicable)
+> Other versions of the packages could also be applicable
 
 ---
 
@@ -157,6 +157,7 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
+> Spaces (' ' or '_') and carriage returns ('\n') do not affect data recognition
 
 <div align="center">
 	
