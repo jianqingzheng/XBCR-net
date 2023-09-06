@@ -82,7 +82,7 @@ pip install pandas==1.1.0
 ---
 
 ## 2. Usage ##
-* Setup
+\* Setup
 ```
 [$DOWNLOAD_DIR]/XBCR-net/           
 ├── data/[$data_name]/
@@ -129,7 +129,7 @@ pip install pandas==1.1.0
 
 </div>
 
-#### Example for training (default):
+\* Example for training (default):
 1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
 2. Run
 ```shell
@@ -138,7 +138,7 @@ python main_train.py --model_name XBCR_net --data_name binding --model_num 0 --m
 3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
 ### 2.2a. Inference by entering data ###
-- Example for a single data point:
+\* Example for a single data point:
 
 ```shell
 HEAVY='VQLVESGGGLVQPGGSLRLSCAASGFTFSSYDMHWVRQTTGKGLEWVSTIGTAGDTYYPDSVKGRFTISREDAKNSLYLQMNSLRAGDTAVYYCARGDSSGYYYYFDYWGQGTLLTVSS'
@@ -148,7 +148,7 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
 
-- Example for multiple data points (split by ','):
+\* Example for multiple data points (split by ','):
 
 ```shell
 HEAVY='VQLVESGGGLVQPGGSLRLSCAASGFTFSSYDMHWVRQTTGKGLEWVSTIGTAGDTYYPDSVKGRFTISREDAKNSLYLQMNSLRAGDTAVYYCARGDSSGYYYYFDYWGQGTLLTVSS, EVQLVESGGGLVQPGGSLRLSCAASGFTFNNYWMSWVRQAPGKGLEWVANINQDGSEKYYVDSVMGRFAISRDNAKNSLYLQMNSLRAEDTAVYYCARDQGYGDYFEYNWFDPWGQGTLVTVSS'
@@ -185,7 +185,6 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 | `--data_name` 	| The data folder name                       	|
 | `--model_name`        | The used model                      	     	|
 | `--model_num`         | The index number of trained model          	|
-| `--max_epochs`        | The max epoch number for training 	     	|
 | `--include_light`     | 1/0: include/exclude input of a light chain	|
 
 </div>
