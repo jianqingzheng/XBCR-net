@@ -158,6 +158,8 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
 
+<div align="center">
+	
 | Argument              | Description                                	|
 | --------------------- | ----------------------------------------------|
 | `--heavy` 		| The heavy chain           			|
@@ -168,6 +170,7 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 | `--model_name`        | The used model                      	     	|
 | `--model_num`         | The index number of the used model         	|
 
+</div>
 
 ### 2.2b. Batch Inference ###
 
@@ -175,8 +178,19 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 2. Run ```python main_infer.py --model_name XBCR_net --data_name $data_name --model_num $model_num --include_light [1/0]```
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/*```
 
+<div align="center">
+	
+| Argument              | Description                                	|
+| --------------------- | ----------------------------------------------|
+| `--data_name` 	| The data folder name                       	|
+| `--model_name`        | The used model                      	     	|
+| `--model_num`         | The index number of trained model          	|
+| `--max_epochs`        | The max epoch number for training 	     	|
+| `--include_light`     | 1/0: include/exclude input of a light chain	|
 
-#### Example for inference (default):
+</div>
+
+\* Example for inference (default):
 1. Check the antibody file in ```XBCR-net/data/$data_name/ab_to_pred/``` and the antibody file in ```XBCR-net/data/$data_name/ag_to_pred/```
 2. Run
 ```shell
