@@ -117,16 +117,17 @@ pip install pandas==1.1.0
 2. Run ```python main_train.py --model_name XBCR_net --data_name $data_name --model_num $model_num --max_epochs max_epochs --include_light [1/0]```
 3. Check the saved model in ```XBCR-net/models/$data_name/$data_name-XBCR_net/```
 
-* Arguments include
+<div align="center">
+	
+| Argument              | Description                                	|
+| --------------------- | ----------------------------------------------|
+| `--data_name` 	| The data folder name                       	|
+| `--model_name`        | The used model                      	     	|
+| `--model_num`         | The index number of trained model          	|
+| `--max_epochs`        | The max epoch number for training 	     	|
+| `--include_light`     | 1/0: include/exclude input of a light chain	|
 
-| Argument              | Description                                |
-| --------------------- | ------------------------------------------ |
-| `--data_name` 	| The data folder name                       |
-| `--model_name`        | The used model                      	     |
-| `--model_num`         | The index number of trained model          |
-| `--max_epochs`        | The max epoch number for training 	     |
-| `--include_light`     | 1/0: include/exclude input of a light chain|
-
+</div>
 
 #### Example for training (default):
 1. Check the experimental data in ```XBCR-net/data/$data_name/exper/``` and the non-experimental data in ```XBCR-net/data/$data_name/nonexp/```
@@ -166,7 +167,6 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 | `--data_name` 	| The data folder name                       	|
 | `--model_name`        | The used model                      	     	|
 | `--model_num`         | The index number of the used model         	|
-| `--include_light`     | 1/0: include/exclude input of a light chain	|
 
 
 ### 2.2b. Batch Inference ###
