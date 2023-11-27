@@ -9,7 +9,7 @@
 Code for *Cell Research* paper [Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant](https://doi.org/10.1038/s41422-022-00727-6)
 
 
-> This repo provides an implementation of the training and inference pipeline of XBCR-net based on tensorflow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
+> This repo provides an implementation of the training and inference pipeline of XBCR-net based on TensorFlow and Keras. The original implementation of its backbone network ACNN could be found in [ACNN repo](https://github.com/XiaoYunZhou27/ACNN).
 
 ---
 ### Contents ###
