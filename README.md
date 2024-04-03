@@ -168,7 +168,6 @@ python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBC
 | `--light` 		| The light chain                       	|
 | `--antig` 		| The antigen                       		|
 | `--data_name` 	| The data folder name                       	|
-| `--data_name` 	| The data folder name                       	|
 | `--model_name`        | The used model                      	     	|
 | `--model_num`         | The index number of the used model         	|
 
