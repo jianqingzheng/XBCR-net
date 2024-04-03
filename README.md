@@ -67,14 +67,14 @@ install packages
 
 [![OS](https://img.shields.io/badge/OS-Windows%7CLinux-darkblue)]()
 [![PyPI pyversions](https://img.shields.io/badge/Python-3.8-blue)](https://pypi.python.org/pypi/ansicolortags/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4.1-lightblue)](www.tensorflow.org)
-[![Numpy](https://img.shields.io/badge/Numpy-1.19.5-lightblue)](https://numpy.org)
-[![Pandas](https://img.shields.io/badge/Pandas-1.1.0-lightblue)](https://pandas.pydata.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.3.1-lightblue)](www.tensorflow.org)
+[![Numpy](https://img.shields.io/badge/Numpy-1.21.4-lightblue)](https://numpy.org)
+[![Pandas](https://img.shields.io/badge/Pandas-1.2.4-lightblue)](https://pandas.pydata.org/)
 
 ```shell
-pip install tensorflow==2.4.1
+pip install tensorflow==2.3.1
 pip install numpy==1.19.5
-pip install pandas==1.1.0
+pip install pandas==1.2.4
 ```
 
 > Other versions of the packages could also be applicable
@@ -82,33 +82,32 @@ pip install pandas==1.1.0
 ---
 
 ## 2. Usage ##
-\* Setup
+\* Setup (for unpaired data)
 ```
-[$DOWNLOAD_DIR]/XBCR-net/           
-├── data/[$data_name]/
-|   ├── exper/
-|   |	|   # experimental dataset for training (.xlsx|.csv files)
-|   |   └── example-experimental_data.xlsx
-|   ├── nonexp/
-|   |	|   # negative samples for training (.xlsx|.csv files)
-|   |   └── example-negative_data.xlsx
-|   └── test/
-|       ├── ab_to_pred/
-|       |   |   # the antibody data for inference
-|       |   └── example-antibody_to_predict.xlsx 
-|       ├── ag_to_pred/
-|       |   |     # the antigen data for inference
-|       |   └── example-antigen_to_predict.xlsx 
-|       └── results/
-|           |    # the files to print the inference results
-|           └── results_rbd_[$model_name]-[$model_num].xlsx 
+[$DOWNLOAD_DIR]/res_aligner_net/           
+├── data/[$data_name]/dataset
+|   |   # experimental dataset for training and testing (.nii|.nii.gz files)
+|   ├── train/
+|   |	├── images/
+|   |   |   ├──0001.nii.gz
+|   |   |   └── ...
+|   |	├── labels/
+|   |   |   ├──0001.nii.gz
+|   |   |   └── ...
+|   ├── test/
+|   |	├── images/
+|   |   |   ├──0001.nii.gz
+|   |   |   └── ...
+|   |	└── labels/
+|   |       ├──0001.nii.gz
+|   |       └── ...
 └── models/[$data_name]/
     └── [$data_name]-[$model_name]/
         |   # the files of model parameters (.tf.index and .tf.data-000000-of-00001 files)
-        ├── model_rbd_[$model_num].tf.index
-        └── model_rbd_[$model_num].tf.data-000000-of-00001
+        ├── model_1_[$model_num].tf.index
+        ├── model_1_[$model_num].tf.data-000000-of-00001
+	└── ...
 ```
-> Default data can be also downloaded from [Data_S1](https://static-content.springer.com/esm/art%3A10.1038%2Fs41422-022-00727-6/MediaObjects/41422_2022_727_MOESM2_ESM.xlsx) (unnecessary in usage)
 
 
 ### 2.1. Training (optional) ###
