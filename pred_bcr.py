@@ -64,6 +64,7 @@ parser.add_argument(
     help="light chain",
     type=str,
     default='',
+    required=False
 )
 
 parser.add_argument(
