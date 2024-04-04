@@ -149,6 +149,8 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
+> Leave `LIGHT=""` or `LIGHT="_"` to exclude the input of light chain.
+
 
 \* Example for multiple data points (split by ','):
 
@@ -159,7 +161,8 @@ ANTIG='RVQPTESIVRFPNITNLCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLC
 
 python pred_bcr.py --heavy $HEAVY --light $LIGHT --antig $ANTIG --model_name XBCR_net --data_name binding --model_num 0
 ```
-> Spaces (' ' or '_') and carriage returns ('\n') do not affect data recognition
+> Set `LIGHT="XXX, ,XXX"` or `LIGHT="XXX,_,XXX"` to selectively exclude the input of light chains.\
+> Spaces (' ' or '_') and carriage returns ('\n') are not recognized as a part of sequence.
 
 <div align="center">
 	
