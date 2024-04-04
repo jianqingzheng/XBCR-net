@@ -82,7 +82,7 @@ model_num=args.model_num
 model_name=args.model_name
 data_name=args.data_name
 # include_light=int(args.light!='')
-include_light=int(len(args.light)<=1)
+include_light=int(len(args.light)<4)
 
 # network setting
 net_core = networks.get_net(model_name)
