@@ -73,13 +73,6 @@ parser.add_argument(
     default='',
 )
 
-
-parser.add_argument(
-    "--include_light",
-    help="include light or not.",
-    type=int,
-    default=1,
-)
 #=======================================================================================================================
 args = parser.parse_args()
 #=======================================================================================================================
@@ -126,7 +119,11 @@ saver = tf.train.Saver(max_to_keep=1)
 saver.restore(sess, model_path + "_rbd_" + str(model_num) + ".tf")
 
 seq_heavy,lst_heavy=seq_proc(args.heavy,shape_heavy)
-seq_light,lst_light=seq_proc(args.light,shape_light)
+if include_light:
+    seq_light,lst_light=seq_proc(args.light,shape_light)
+else:
+    seq_light = [seq*0 for seq in seq_heavy]
+    lst_light = ['' for element in lst_heavy]
 seq_antig,lst_antig=seq_proc(args.antig,shape_antig)
 inferFeed = {
     input_heavy_seq: seq_heavy,
