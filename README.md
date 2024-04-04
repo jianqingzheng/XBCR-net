@@ -199,6 +199,12 @@ python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --i
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
 
 ---
+## 3. Demo ##
+A demo can be found in the provided [notebook](https://github.com/jianqingzheng/XBCR-net/blob/main/XBCR-net.ipynb).
+
+Alternatively, it can be easily run via [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
+
+---
 
 ## 3. Citing this work
 
