@@ -19,7 +19,8 @@ Code for *Cell Research* paper [Deep learning-based rapid generation of broadly 
   - [2.1. Training (optional)](#21-training-optional)
   - [2.2a. Inference by entering data](#22a-inference-by-entering-data)
   - [2.2b. Batch Inference](#22b-batch-inference)
-- [3. Citing this work](#3-citing-this-work)
+- [3. Demo](#3-demo)
+- [4. Citing this work](#3-citing-this-work)
 
 ---
 
@@ -200,13 +201,13 @@ python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --i
 
 ---
 ## 3. Demo ##
-A demo can be found in the provided [notebook](https://github.com/jianqingzheng/XBCR-net/blob/main/XBCR-net.ipynb).
+A demo can be found in the provided [notebook](https://github.com/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
 
 Alternatively, it can be easily run via [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
 
 ---
 
-## 3. Citing this work
+## 4. Citing this work
 
 Any publication that discloses findings arising from using this source code or the network model should cite:
 - Hantao Lou, Jianqing Zheng, Xiaohang Leo Fang, Zhu Liang, Meihan Zhang, Yu Chen, Chunmei Wang, Xuetao Cao, "Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant." *Cell Research* 33.1 (2023): 80-82.
