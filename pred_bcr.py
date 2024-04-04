@@ -61,7 +61,7 @@ parser.add_argument(
 
 parser.add_argument(
     "--light",
-    help="light chain",
+    help="light chain (could be empty to be excluded)",
     type=str,
     default='',
     required=False
