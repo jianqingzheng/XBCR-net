@@ -10,7 +10,7 @@ from utils import *
 np.random.seed(1)
 eps = 1e-7
 ##############################################################################################
-def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path=None, neg_path=None, batch_size=None,nb_epochs1=None):
+def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path=None, neg_path=None, batch_size=None,nb_epochs1=None, restore_pre_train = True):
 
     def data_process(data, header=[''], seq_length=[300], min_seq_length=10, str_rep='',
                      input_loc=True):
@@ -78,7 +78,7 @@ def train(net_core=None, model_path=None,model_num=None,include_light=1,pos_path
         bac = (sns+spc)/2
         return [acc,sns,spc,ppv,npv,bac]
 
-    restore_pre_train = True
+    # restore_pre_train = True
     # summary_error = False
     summary_error = True
     init_lr = 0.0001
