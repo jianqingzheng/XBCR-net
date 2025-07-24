@@ -3,7 +3,7 @@
 
 [![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41422--022--00727--6-darkyellow)](https://www.nature.com/articles/s41422-022-00727-6)
 [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb)
-
+<a href="https://zread.ai/jianqingzheng/XBCR_net"><img alt="User Manual" src="https://img.shields.io/website?url=https%3A%2F%2Fzread.ai%2Fjianqingzheng%2FXBCR_net%2F&up_message=online&up_color=darkgreen&down_message=offline&down_color=darkgray&label=User%20Manual"></a>
 </div>
 
 Code for *Cell Research* paper [Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant](https://doi.org/10.1038/s41422-022-00727-6)
@@ -19,7 +19,7 @@ Code for *Cell Research* paper [Deep learning-based rapid generation of broadly 
   - [2.1. Training (optional)](#21-training-optional)
   - [2.2a. Inference by entering data](#22a-inference-by-entering-data)
   - [2.2b. Batch Inference](#22b-batch-inference)
-- [3. Demo](#3-demo)
+- [3. Demo and Tutorial](#3-demo-and-tutorial)
 - [4. Citing this work](#3-citing-this-work)
 
 ---
@@ -203,10 +203,12 @@ python main_infer.py --model_name XBCR_net --data_name binding --model_num 0 --i
 3. Download the result Excel file from ```XBCR-net/data/binding/test/results/results_rbd_XBCR_net-0.xlsx```
 
 ---
-## 3. Demo ##
+## 3. Demo and Tutorial ##
 A demo can be found in the provided [notebook](https://github.com/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
 
 Alternatively, it can be easily run via [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
+
+Additionally, a detailed tutorial can be found in the provided <a href="https://zread.ai/jianqingzheng/XBCR_net"><img alt="User Manual" src="https://img.shields.io/website?url=https%3A%2F%2Fzread.ai%2Fjianqingzheng%2FXBCR_net%2F&up_message=online&up_color=darkgreen&down_message=offline&down_color=darkgray&label=User%20Manual"></a> (powered by Zread.ai).
 
 ---
 
