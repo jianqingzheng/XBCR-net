@@ -210,7 +210,8 @@ A demo can be found in the provided [notebook](https://github.com/jianqingzheng/
 
 Alternatively, it can be easily run via [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb).
 
-Additionally, a detailed tutorial can be found in the provided <a href="https://zread.ai/jianqingzheng/XBCR-net"><img alt="User Manual" src="https://img.shields.io/website?url=https%3A%2F%2Fzread.ai%2Fjianqingzheng%2FXBCR-net%2F&up_message=online&up_color=darkgreen&down_message=offline&down_color=darkgray&label=User%20Manual"></a> (powered by Zread.ai).
+Additionally, detailed tutorials can be found in the provided [![User_Manual](https://img.shields.io/badge/UserManual-zread.ai-darkgreen)](https://zread.ai/jianqingzheng/XBCR-net) (powered by Zread.ai) or [![User_Manual](https://img.shields.io/badge/UserManual-deepwiki-darkgreen)](https://deepwiki.com/jianqingzheng/XBCR-net) (powered by DeepWiki).
+
 
 ---
 
