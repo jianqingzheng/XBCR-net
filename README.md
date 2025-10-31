@@ -3,7 +3,9 @@
 
 [![DOI](https://img.shields.io/badge/DOI-10.1038%2Fs41422--022--00727--6-darkyellow)](https://www.nature.com/articles/s41422-022-00727-6)
 [![Explore XBCR-net in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jianqingzheng/XBCR-net/blob/main/XBCR_net.ipynb)
-<a href="https://zread.ai/jianqingzheng/XBCR-net"><img alt="User Manual" src="https://img.shields.io/website?url=https%3A%2F%2Fzread.ai%2Fjianqingzheng%2FXBCR-net%2F&up_message=online&up_color=darkgreen&down_message=offline&down_color=darkgray&label=User%20Manual"></a>
+<br />
+[![User_Manual](https://img.shields.io/badge/UserManual-zread.ai-darkgreen)](https://zread.ai/jianqingzheng/XBCR-net)
+[![User_Manual](https://img.shields.io/badge/UserManual-deepwiki-darkgreen)](https://deepwiki.com/jianqingzheng/XBCR-net)
 </div>
 
 Code for *Cell Research* paper [Deep learning-based rapid generation of broadly reactive antibodies against SARS-CoV-2 and its Omicron variant](https://doi.org/10.1038/s41422-022-00727-6)
